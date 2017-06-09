@@ -1,10 +1,9 @@
 <?php
     class DB_FUNCTIONS {
-        private $db;
+        public $db, $con;
         function __construct() {
             require_once 'db_connect.php';
             $this->db = new DB_CONNECT();
-            $this->db->connect();
         }
         function __destruct() {
 
@@ -17,13 +16,14 @@
                     $own_land."','".$land."','".$income."','".$electricity_no."','".
                     $landline_no."','".$gas_agency."','".$drinking_water."','".
                     $laterine_facility."','".$vehicle_type."','".$literacy_count."','yes');";
-            $result = mysql_query($query);
-            if($result)
+            $con = $this->db->connect();
+            try {
+                $con->exec($query);
                 return true;
-            elseif(mysql_errno() == 1062)
-                return true;
-            else
+            }
+            catch(PDOException $e) {
                 return false;
+            }
         }
         public function storeMember($ward, $house_no, $name, $age, $sex, $edu_qualifications,
                 $job, $uid_no, $election_id, $govt_aids, $mob_no, $any_traits) {
@@ -31,13 +31,15 @@
                     $name."','".$age."','".$sex."','".$edu_qualifications."','".
                     $job."','".$uid_no."','".$election_id."','".$govt_aids."','".
                     $mob_no."','".$any_traits."','yes');";
-            $result = mysql_query($query);
-            if($result)
+            $con = $this->db->connect();
+            try {
+                $con->exec($query);
                 return true;
-            elseif(mysql_errno() == 1062)
-                return true;
-            else
+            }
+            catch(PDOException $e) {
                 return false;
+            }
+            
         }
         // public function getAllUsers() {
         //     $query = "SELECT * FROM temp;";

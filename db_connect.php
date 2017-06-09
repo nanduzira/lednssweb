@@ -8,12 +8,21 @@
         }
         public function connect() {
             require_once 'config.php';
-            $con = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-            mysql_select_db(DB_DATABASE);
-            return $con;
+            $DB_HOST = DB_HOST;
+            $DB_DATABASE = DB_DATABASE;
+            $DB_USER = DB_USER;
+            $DB_PASSWORD = DB_PASSWORD;
+            try {
+                $con = new PDO("mysql:host=$DB_HOST;dbname=$DB_DATABASE", $DB_USER, $DB_PASSWORD);
+                $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $con;
+            }
+            catch(PDOException $e) {
+                return false;
+            }
         }
         public function close() {
-            mysql_close();
+            $con = null;
         }
     }
 ?>
