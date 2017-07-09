@@ -11,7 +11,7 @@ $userRow=mysqli_fetch_array($res);
 
 
 
-?>
+?>?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -76,6 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu toggle button -->
          
             <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
@@ -162,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">USEFUL LINKS</li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="admin_index.php"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li class="treeview">
+        <!--<li class="treeview">
           <li><a href="#"><i class="fa fa-link"></i> <span>Search</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -172,7 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li ><a href="s_house.php">House</a></li>
             <li><a href="s_ward.php">Ward</a></li>
           </ul>
-        </li>
+        </li>-->
          <li class="active"><a href="chng_pass.php"><i class="fa fa-link"></i> <span>Change Password</span></a></li>
         <li><a href="../login/logout.php?logout"><i class="fa fa-link"></i> <span>Sign Out</span></a></li>
         
@@ -186,14 +187,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      
+      <h1>
+      Change Password</h1>
       <h1>&nbsp;</h1><form method="post">
-<center>
+
 <table align="center" width="30%" border="0">
-<tr>
-<td><h2><center>
-      Change Password</h2></td>
-</tr>
 <tr>
 <td><input type="password" name="pass" placeholder="Enter Current Password" required /></td>
 </tr>
@@ -205,13 +203,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </tr>
 <tr>
 <td><button type="submit" name="btn-signup">Change Password</button>
-</td>
+
 </tr>
 <tr>
 <td></td>
 </tr>
 </table>
-</form><br/></p></center></center>
+</form><br/></p>
 
      
     </section>

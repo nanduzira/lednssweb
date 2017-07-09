@@ -1,4 +1,5 @@
 <?php
+$link = mysqli_connect("localhost","root","","ledkerala");
 
 session_start();
 include_once 'dbconnect.php';

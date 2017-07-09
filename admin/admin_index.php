@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -159,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">USEFUL LINKS</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li class="treeview">
+        <!--<li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Search</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -169,7 +169,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li><a href="s_house.php">House</a></li>
             <li><a href="s_ward.php">Ward</a></li>
           </ul>
-        </li>
+        </li>-->
                  <li><a href="chng_pass.php"><i class="fa fa-link"></i> <span>Change Password</span></a></li>
 
         <li><a href="../login/logout.php?logout"><i class="fa fa-link"></i> <span>Sign Out</span></a></li>
@@ -196,7 +196,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house");
+	  $result=mysqli_query($link,"select * from houses");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -208,7 +208,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Total Houses Registered</p>
             </div>
             <div class="icon">
-              <i class="ion1 ion-bars"></i>
+              <i class="ion ion-bag"></i>
             </div>
           </div>
         </div>
@@ -219,7 +219,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from member");
+	  $result=mysqli_query($link,"select * from members");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -230,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Total Members Registered</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-stats-bars"></i>
             </div>
           </div>
         </div>
@@ -241,18 +241,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner"> 
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where cmptr_lit_count!='NULL'");
+	  $result=mysqli_query($link,"select * from houses where literacy_count!='NULL'");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
-		  $i=$i+$row['cmptr_lit_count'];
+		  $i=$i+$row['literacy_count'];
 		  
 		  } echo $i; ?></h3>
 
               <p>Computer Literates</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-person-add"></i>
             </div>
           </div>
         </div>
@@ -263,7 +263,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where annual_income<20000");
+	  $result=mysqli_query($link,"select * from houses where income<20000");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -274,7 +274,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Annual Income(Below 20k)</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-pie-graph"></i>
             </div>
           </div>
         </div>
@@ -291,7 +291,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where 20000<=annual_income and annual_income<=45000");
+	  $result=mysqli_query($link,"select * from houses where 20000<=income and income<=45000");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -302,7 +302,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Annual Income(20000-45000)</p>
             </div>
             <div class="icon">
-              <i class=" -bars"></i>
+              <i class="ion ion-bag"></i>
             </div>
           </div>
         </div>
@@ -313,7 +313,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where 45001<=annual_income and annual_income<=100000");
+	  $result=mysqli_query($link,"select * from houses where 45001<=income and income<=100000");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -324,7 +324,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Annual Income(45001-100k)</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-stats-bars"></i>
             </div>
           </div>
         </div>
@@ -335,7 +335,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where 100001<=annual_income and annual_income<=500000");
+	  $result=mysqli_query($link,"select * from houses where 100001<=income and income<=500000");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -346,7 +346,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Annual Income(100001-500k)</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-person-add"></i>
             </div>
           </div>
         </div>
@@ -357,7 +357,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where  annual_income>500000");
+	  $result=mysqli_query($link,"select * from houses where income>500000");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -368,7 +368,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Annual Income(Above 500k)</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-pie-graph"></i>
             </div>
           </div>
         </div>
@@ -385,7 +385,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from member where sex='Male' and age>=18");
+	  $result=mysqli_query($link,"select * from members where sex='MALE' and age>=18");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -396,7 +396,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Adult Males</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-bag"></i>
             </div>
           </div>
         </div>
@@ -407,7 +407,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from member where sex='Female' and age>=18");
+	  $result=mysqli_query($link,"select * from members where sex='FEMALE' and age>=18");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -418,7 +418,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Adult Females</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-stats-bars"></i>
             </div>
           </div>
         </div>
@@ -429,7 +429,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from member where sex='Male' and age<18");
+	  $result=mysqli_query($link,"select * from members where sex='MALE' and age<18");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -440,7 +440,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Chidren (Male)</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-person-add"></i>
             </div>
           </div>
         </div>
@@ -451,7 +451,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from member where sex='Female' and age<18");
+	  $result=mysqli_query($link,"select * from members where sex='FEMALE' and age<18");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -462,7 +462,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>Children(Females)</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-pie-graph"></i>
             </div>
           </div>
         </div>
@@ -478,7 +478,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where category='General'");
+	  $result=mysqli_query($link,"select * from houses where caste='General'");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -489,7 +489,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>General</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-bag"></i>
             </div>
           </div>
         </div>
@@ -500,7 +500,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where category='OBC'");
+	  $result=mysqli_query($link,"select * from houses where caste='OBC'");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -511,7 +511,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>OBC</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-stats-bars"></i>
             </div>
           </div>
         </div>
@@ -522,7 +522,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where category='SC/ST'");
+	  $result=mysqli_query($link,"select * from houses where caste='SC'");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -533,7 +533,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>SC/ST</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-person-add"></i>
             </div>
           </div>
         </div>
@@ -544,7 +544,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="inner">
               <h3><?php
 	  include_once '../login/dbconnect.php';
-	  $result=mysqli_query($link,"select * from house where category='OEC'");
+	  $result=mysqli_query($link,"select * from houses where caste='ST'");
 	  $i=0;
       while($row=mysqli_fetch_array($result))
 	  {
@@ -555,7 +555,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <p>OEC</p>
             </div>
             <div class="icon">
-              <i class=""></i>
+              <i class="ion ion-pie-graph"></i>
             </div>
           </div>
         </div>

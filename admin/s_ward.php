@@ -224,12 +224,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <tr><td colspan='9'><center><h3>Ward No:".$ward.
 	  
 	  "</h3></td></tr>
-      <tr><td><h4>SL.No</h4></td><td><h4>House No</h4></td><td><h4>Head of Family</h4></td><td><h4>Address</h4></td><td><h4>Category</h4></td><td><h4>Ration Card No</h4></td><td><h4>Own Land</h4></td><td><h4>Electricity Consumer No</h4></td><td><h4>Landline No</h4></td></tr>"; }
+      <tr><td><h4>SL.No</h4></td><td><h4>House No</h4></td><td><h4>Address</h4></td><td><h4>Category</h4></td><td><h4>Ration Card No</h4></td><td><h4>Own Land</h4></td><td><h4>Electricity Consumer No</h4></td><td><h4>Landline No</h4></td><td><h4>Gas Agency</h4></td></tr>"; }
 	  $i=1;
 	  $result2=mysqli_query($link,"select * from house where ward_no='$ward'");
 	  while($row1=mysqli_fetch_array($result2))
       {
-		  echo "<tr><td>$i</td><td>".$row1['house_no']."</td><td>".$row1['hof']."</td><td>".$row1['address']."</td><td>".$row1['category']."</td><td>".$row1['rat_no']."</td><td>".$row1['land']."</td><td>".$row1['elec_cons_no']."</td><td>".$row1['landline']."</td></tr>";
+		  echo "<tr><td>$i</td><td>".$row1['house_no']."</td><td>".$row1['address']."</td><td>".$row1['category']."</td><td>".$row1['rat_no']."</td><td>".$row1['land']."</td><td>".$row1['elec_cons_no']."</td><td>".$row1['landline']."</td><td>".$row1['gas']."</td></tr>";
 		  $i++;
 	  }
 	  echo "</table>";

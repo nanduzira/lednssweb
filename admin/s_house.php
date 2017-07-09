@@ -185,7 +185,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
       <p>&nbsp;</p>
       <p>&nbsp;</p>
-      <p><center>
+      <p>
       <form method="post">
 
 <table align="center" width="30%" border="0">
@@ -205,7 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </tr>
 <tr>
 <td><button type="submit" name="search">Search</button>
-</td>
+
 </tr>
 <tr>
 <td></td>
@@ -224,7 +224,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       while($row1=mysqli_fetch_array($result1))
       {
       echo "<table align='center' width='70%' border='1'> 
-	   <tr><td colspan='2'>Reg. ID</td><td colspan='2'>".$row1['house_id']."</td></tr>
        <tr><td colspan='2'>Ward</td><td colspan='2'>".$row1['ward_no']."</td></tr>
         <tr><td colspan=2>House No</td><td colspan='2'>".$row1['house_no']."</td></tr>
       <tr><td colspan=2>Address</td><td colspan=2>".$row1['address']."</td></tr>
@@ -240,8 +239,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <tr><td colspan=2>Vehicle</td><td colspan=2>".$row1['vehicle']."</td></tr>
       <tr><td colspan=2>Computer literacy</td><td colspan=2>".$row1['cmptr_lit_count']."</td></tr>";
 	  }
-	        $result1=mysqli_query($link,"select * from house where ward_no='$ward' and house_no='$hno'");
-
 	   if($row1=mysqli_fetch_array($result1))
       {
 	   echo "<tr><td><strong>Member Name</strong>
@@ -253,7 +250,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       echo" <tr><td><a href='opn_member.php?id=$id'>".$row2['name']."</a><td>".$row2['age']."</td><td>".$row2['sex']."</td><td>".$row2['adhaar']."</td></tr>"
     ;
 	  }echo "</table>" ;}
- ?></p></center>
+ ?></p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>

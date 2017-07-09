@@ -191,7 +191,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	  include_once '../login/dbconnect.php';
 	  $id=$_GET['id'];
 	   $result1=mysqli_query($link,"select * from member where member_id='$id'");
-	   if($row1=mysqli_fetch_array($result1))
+	   while($row1=mysqli_fetch_array($result1))
       {
 	   echo $row1['name']."<br/><small>".$row1['mobile']."</small>";
 	   
